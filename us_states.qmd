@@ -1,0 +1,13 @@
+---
+title: "Electrical Vehicle"
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+library(ggplot2)
+library(sf)
+library(tidyverse)
+```
+
+EV_sf <- st_read("~//Class/Data/ComArea_ACS14_f.shp")

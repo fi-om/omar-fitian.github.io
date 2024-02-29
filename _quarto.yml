@@ -1,0 +1,35 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Omar Fitian"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About
+      - text: "Maps"
+        menu:
+          - text: "US States"
+            href: us_states.qmd
+          - text: "Wisconsin Districts"
+            href: wisconsin_districts.qmd
+  page-footer:
+      left: |
+        &copy; Omar Fitian, 2024<br>
+        All content licensed under <i class='bi-badge-cc'></i>
+        [(CC BY-NC-SA 4.0)](http://creativecommons.org/licenses/by-nc-sa/4.0/)
+      right: |
+        Site built with <a href='https://quarto.org/'>Quarto</a>
+
+
+format:
+  html:
+    theme: lux
+    css: styles.css
+    toc: true
+
+editor: visual
+

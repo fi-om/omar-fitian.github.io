@@ -1,0 +1,5 @@
+---
+title: "About"
+---
+
+This website is made using Quarto. The website and projects are coursework for MSCS 264 with <a href = 'https://proback.github.io'>Dr. Paul Roback </a>
