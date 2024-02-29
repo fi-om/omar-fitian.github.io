@@ -1,13 +1,37 @@
 ---
-title: "Electrical Vehicle"
+title: "US States"
 editor_options: 
   chunk_output_type: console
+execute:
+  echo: false
 ---
 
-```{r}
-library(ggplot2)
-library(sf)
+```{r, include = FALSE}
+library(maps)
+library(viridis)
 library(tidyverse)
+library(tidycensus)
 ```
 
-EV_sf <- st_read("~//Class/Data/ComArea_ACS14_f.shp")
+```{r, include = FALSE}
+EV <- read_csv("Data/EV.csv")
+us_states <- map_data("state")
+age20 <- get_decennial(geography = "state", 
+                       variables = "P13_001N", 
+                       year = 2020,
+                       sumfile = "dhc") |> mutate(NAME = str_to_lower(NAME))
+head(age20)
+```
+
+```{r}
+age20 |>
+  right_join(us_states, by = c("NAME" = "region")) |> 
+  ggplot(mapping = aes(x = long, y = lat,
+                          group = group)) + 
+  geom_polygon(aes(fill = value), color = "black") + 
+  labs(fill = "Population percent change") +
+  coord_map() + 
+  theme_void() +  
+  scale_fill_gradient2()
+```
+
