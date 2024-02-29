@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Omar Fitian -</title>
+<title>Omar Fitian - Electrical Vehicle</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -33,6 +67,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
@@ -81,7 +116,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="./index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -115,58 +150,52 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#omar-fitian" id="toc-omar-fitian" class="nav-link active" data-scroll-target="#omar-fitian">Omar Fitian</a>
-  <ul class="collapse">
-  <li><a href="#education" id="toc-education" class="nav-link" data-scroll-target="#education">Education</a></li>
-  </ul></li>
-  <li><a href="#get-in-touch" id="toc-get-in-touch" class="nav-link" data-scroll-target="#get-in-touch">Get in Touch</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-
-
-<div class="quarto-about-trestles">
-  <div class="about-entity">
-    <img src="images/profilepic.jpg" class="about-image
-  round " style="height: 20em; width: 20em;">
-    <div class="about-links">
-  <a href="mailto:fitian1@stolaf.edu" class="about-link" rel="" target="">
-    <i class="bi bi-envelope"></i>
-     <span class="about-link-text"></span>
-  </a>
-  <a href="https://github.com/fi-om" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text"></span>
-  </a>
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Electrical Vehicle</h1>
 </div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
   </div>
-  <div class="about-contents"><div id="intro-heading">
-<section id="omar-fitian" class="level2">
-<h2 data-anchor-id="omar-fitian">Omar Fitian</h2>
-<p>Data Analyst, Software Engineer, Sociologist</p>
-<section id="education" class="level3">
-<h3 data-anchor-id="education">Education</h3>
-<p>BA in Computer Science and Sociology/Anthropology with Statistics and Data Science concentration<br>2026 | St.&nbsp;Olaf College</p>
-</section>
-</section>
-</div></div>
+  
+
+</header>
+
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Linking to GEOS 3.11.0, GDAL 3.5.3, PROJ 9.1.0; sf_use_s2() is TRUE</code></pre>
 </div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ lubridate 1.9.3     ✔ tibble    3.2.1
+✔ purrr     1.0.2     ✔ tidyr     1.3.0</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+</div>
+<p>EV_sf &lt;- st_read(“~//Class/Data/ComArea_ACS14_f.shp”)</p>
 
-<section id="get-in-touch" class="level2">
-<h2 data-anchor-id="get-in-touch">Get in Touch</h2>
-<p><strong>Email</strong>: <a href="mailto:fitian1@stolaf.edu">fitian1 at stolaf.edu</a></p>
-<p><strong>Address</strong>: 1500 St.&nbsp;Olaf Ave, Northfield, MN 55057</p>
 
-
-
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -189,6 +218,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     

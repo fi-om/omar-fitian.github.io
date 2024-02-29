@@ -7,6 +7,13 @@
     "text": "This website is made using Quarto. The website and projects are coursework for MSCS 264 with Dr. Paul Roback"
   },
   {
+    "objectID": "us_states.html",
+    "href": "us_states.html",
+    "title": "Electrical Vehicle",
+    "section": "",
+    "text": "library(ggplot2)\nlibrary(sf)\n\nLinking to GEOS 3.11.0, GDAL 3.5.3, PROJ 9.1.0; sf_use_s2() is TRUE\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ lubridate 1.9.3     ✔ tibble    3.2.1\n✔ purrr     1.0.2     ✔ tidyr     1.3.0\n\n\n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nEV_sf &lt;- st_read(“~//Class/Data/ComArea_ACS14_f.shp”)"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Omar Fitian",
@@ -19,13 +26,6 @@
     "title": "Omar Fitian",
     "section": "",
     "text": "Data Analyst, Software Engineer, Sociologist\n\n\nBA in Computer Science and Sociology/Anthropology with Statistics and Data Science concentration2026 | St. Olaf College"
-  },
-  {
-    "objectID": "index.html#education",
-    "href": "index.html#education",
-    "title": "Omar Fitian",
-    "section": "Education",
-    "text": "Education\nBA in Computer Science and Sociology/Anthropology with Statistics and Data Science concentration2026 | St. Olaf College"
   },
   {
     "objectID": "index.html#get-in-touch",
