@@ -22,7 +22,7 @@ results_house |>
   summarize(N = n())
 ```
 
-```{r}
+```{r, include = FALSE}
 district_elections <- results_house |>
   mutate(district = parse_number(district_id)) |>
   group_by(state, district) |>
@@ -45,13 +45,13 @@ wi_results |>
   select(-state)
 ```
 
-```{r}
+```{r, include = FALSE}
 wi_results |>
   skim(total_votes)
 ```
 
 
-```{r}
+```{r, include = FALSE}
 wi_results |>
   summarize(
     N = n(), 
@@ -65,22 +65,22 @@ wi_results |>
   )
 ```
 
-```{r}
+```{r, include = FALSE}
 wi_results |>
   select(district, r_prop, d_prop, winner) |>
   arrange(desc(r_prop))
 ```
 
-```{r}
+```{r, include = FALSE}
 districts <- st_read("Data/districts115/cb_2016_us_cd115_500k.shp")
 ```
 
-```{r}
+```{r, include = FALSE}
 head(districts, width = Inf)
 ```
 
 
-```{r}
+```{r, include = FALSE}
 wi_shp <- districts |>
   filter(STATEFP == 55)
 wi_shp |>
@@ -88,7 +88,7 @@ wi_shp |>
   plot(col = gray.colors(nrow(wi_shp)))
 ```
 
-```{r}
+```{r, include = FALSE}
 wi_merged <- wi_shp |>
   mutate(
     CD115FP = parse_number(CD115FP)
@@ -98,7 +98,7 @@ wi_merged <- wi_shp |>
 head(wi_merged, width = Inf)
 ```
 
-```{r}
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
 wi <- ggplot(data = wi_merged, aes(fill = winner)) +
   annotation_map_tile(zoom = 6, type = "osm", progress = "none") + 
   geom_sf(alpha = 0.5) +
@@ -108,7 +108,7 @@ wi <- ggplot(data = wi_merged, aes(fill = winner)) +
 wi
 ```
 
-```{r}
+```{r, warning = FALSE, message = FALSE}
 wi +
   aes(fill = r_prop) + 
   scale_fill_distiller(
