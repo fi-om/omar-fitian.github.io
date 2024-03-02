@@ -12,18 +12,16 @@ about:
       href: mailto:fitian1@stolaf.edu
     - icon: github
       href: https://github.com/fi-om
-
 ---
 
-:::{#intro-heading}
+::: {#intro-heading}
 ## Omar Fitian
 
 Data Analyst, Software Engineer, Sociologist
 
 ### Education
 
-BA in Computer Science and Sociology/Anthropology with Statistics and Data Science concentration<br>2026 | St. Olaf College
-
+BA in Computer Science and Sociology/Anthropology with Statistics and Data Science concentration<br>2026 \| St. Olaf College
 :::
 
 ## Get in Touch

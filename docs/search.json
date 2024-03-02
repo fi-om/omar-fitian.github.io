@@ -1,19 +1,5 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "This website is made using Quarto. The website and projects are coursework for MSCS 264 with Dr. Paul Roback"
-  },
-  {
-    "objectID": "us_states.html",
-    "href": "us_states.html",
-    "title": "US States",
-    "section": "",
-    "text": "From the plot, we can see that there is a significant difference in the number of shelters and hosing for people experiencing homelessness between states. California seems to have eight times more homeless housing projects than the national average. Minnesota is one of the few Midwestern states who are above the national average. However, this map does not tell the whole story, as California has the highest homeless population in the country. However, this plot can give insight but must be viewed in a larger context. One must also take into account the homeless per capita numbers as well as population density. It would be interesting to calculate the Moran’s I of the number of missions per homeless population."
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Omar Fitian",
@@ -35,10 +21,17 @@
     "text": "Get in Touch\nEmail: fitian1 at stolaf.edu\nAddress: 1500 St. Olaf Ave, Northfield, MN 55057"
   },
   {
-    "objectID": "wisconsin_districts.html",
-    "href": "wisconsin_districts.html",
-    "title": "Wisconsin Districts",
+    "objectID": "us_states.html",
+    "href": "us_states.html",
+    "title": "US States",
     "section": "",
-    "text": "Scale for fill is already present.\nAdding another scale for fill, which will replace the existing scale."
+    "text": "From the plot, we can see that there is a significant difference in the number of shelters and housing for people experiencing homelessness between states. California seems to have eight times more homeless housing projects than the national average. Minnesota is one of the few Midwestern states who are above the national average. However, this map does not tell the whole story, as California has the highest homeless population in the country. However, this plot can give insight but must be viewed in a larger context. One must also take into account the homeless per capita numbers as well as population density. It would be interesting to calculate the Moran’s I of the number of missions per homeless population."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "This website is made using Quarto. The website and projects are coursework for MSCS 264 with Dr. Paul Roback"
   }
 ]
