@@ -11,7 +11,7 @@
     "href": "us_states.html",
     "title": "US States",
     "section": "",
-    "text": "Loading required package: viridisLite\n\n\n\nAttaching package: 'viridis'\n\n\nThe following object is masked from 'package:maps':\n\n    unemp\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.4.4     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.0\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\n✖ purrr::map()    masks maps::map()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors"
+    "text": "From the plot, we can see that there is a significant difference in the number of shelters and hosing for people experiencing homelessness between states. California seems to have eight times more homeless housing projects than the national average. Minnesota is one of the few Midwestern states who are above the national average. However, this map does not tell the whole story, as California has the highest homeless population in the country. However, this plot can give insight but must be viewed in a larger context. One must also take into account the homeless per capita numbers as well as population density. It would be interesting to calculate the Moran’s I of the number of missions per homeless population."
   },
   {
     "objectID": "index.html",
