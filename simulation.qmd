@@ -1,0 +1,41 @@
+---
+title: "Simulation"
+editor_options: 
+  chunk_output_type: console
+execute:
+  echo: false
+---
+
+```{r, include = FALSE}
+library(tidyverse)
+library(fec16)
+library(skimr)
+library(ggplot2)
+library(ggspatial)
+library(sf)
+```
+
+```{r}
+encampments <- read_csv("Data/homelessness.csv")
+encampments <- encampments |>
+  mutate(
+    Latitude = as.numeric(Latitude),
+    Longitude = as.numeric(Longitude)
+  ) |> 
+  filter(!is.na(Latitude)) |> 
+  filter(!is.na(Longitude))
+
+encampments_sf <- st_as_sf(encampments, coords = c("Longitude", "Latitude"), remove = TRUE)
+encampments_sf <- encampments_sf |> st_set_crs(4326)
+
+nyc_sf <- st_read("Data/Borough Boundaries/geo_export_b711edb6-f22b-4799-a1ca-fb9c325f7f7e.shp") |> st_transform(4326)
+```
+
+The simulation
+
+```{r}
+ggplot() +
+  geom_sf(data = nyc_sf) +
+  geom_sf(data = encampments_sf) 
+```
+
