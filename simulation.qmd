@@ -13,6 +13,9 @@ library(skimr)
 library(ggplot2)
 library(ggspatial)
 library(sf)
+library(stringr)
+library(spdep)
+library(spatstat)
 ```
 
 ```{r}
@@ -25,7 +28,7 @@ encampments <- encampments |>
   filter(!is.na(Latitude)) |> 
   filter(!is.na(Longitude))
 
-encampments_sf <- st_as_sf(encampments, coords = c("Longitude", "Latitude"), remove = TRUE)
+encampments_sf <- st_as_sf(encampments, coords = c("Longitude", "Latitude"), remove = FALSE)
 encampments_sf <- encampments_sf |> st_set_crs(4326)
 
 nyc_sf <- st_read("Data/Borough Boundaries/geo_export_b711edb6-f22b-4799-a1ca-fb9c325f7f7e.shp") |> st_transform(4326)
@@ -53,10 +56,68 @@ ggplot() +
   geom_sf(data = camps_mn)
 ```
 
-We can see that some neighborhoods have had many reports of camps and some none at all. If we aggregate the data we will have a better time visually assessing any spatial correlation.
+We can see that some neighborhoods have had many reports of camps and some none at all. If we aggregate the data we will have a better time visually assessing any spatial autocorrelation.
 
 ```{r}
-
+mn_sf <- mn_sf |> 
+  mutate(n = lengths(st_intersects(mn_sf, camps_mn)),
+         area = st_area(mn_sf))
 ```
+
+
+```{r}
+camps_by_neighborhood <- camps_mn |> 
+  group_by(`Community Districts`) |> 
+  summarise(
+    n = n()
+  ) |> as.data.frame()
+```
+
+
+
+```{r}
+for (i in seq_along(mn_sf$n)) {
+  if (is.na(mn_sf$n[i])) {
+    mn_sf$n[i] <- 0
+  }
+}
+
+mn_sf <- mn_sf |> mutate_at("ntacode", str_replace, "MN", "") |> 
+  mutate(
+    ntacode = as.numeric(ntacode)
+  )
+
+map_fill <- function(dataset, variable) { # Function
+  dataset |> 
+    ggplot() +
+    geom_sf(aes(fill = variable)) +
+    scale_fill_viridis_c()
+}
+
+map_fill(mn_sf, mn_sf$n)
+```
+
+We can see that many community districts in Manhattan have had little to no reports of encampments, while others have a concentrated number. We can better visualise the data if we log the number of encampments.
+
+```{r}
+map_fill(mn_sf, log(mn_sf$n))
+```
+
+Much better, we can better visually assess the distribution of reported encampments in the community districts.
+
+From here, we can calculate the Moran's I which is a statistical test that measures the spatial autocorrelation of an aggregate variable.
+
+```{r}
+set.seed(1)
+mn_nb <- poly2nb(mn_sf, queen = FALSE) 
+mn_nbw <- nb2listw(mn_nb, style = "W", zero.policy = TRUE)
+moran.mc(mn_sf$n, mn_nbw, nsim = 999) # Loop
+```
+
+$H_O$: No spatial autocorrelation, I is close to 0
+
+$H_A$: Spatial autocorrelation, I $\neq$ 0. 
+
+With a Moran's I of -0.013, we observe a weak negative spatial autocorrelation. However, as the p-value of 0.299 is relatively large, we fail to reject the null hypothesis; the number of reported homeless encampments is not spatially autocorrelated in Manhattan community districts as per this data and our analysis. This could be due to many factors, the lack of robust data on homelessness. Temporal bias could also be an issue, as the data is spread out over four years. Aggregate bias could also have an effect on the results; analysis of point-pattern data using K-cross analyses would have been more appropriate.
 
 
