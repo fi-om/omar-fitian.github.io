@@ -16,6 +16,8 @@ website:
             href: us_states.qmd
           - text: "Wisconsin Districts"
             href: wisconsin_districts.qmd
+      - href: simulation.qmd
+        text: Simulation
   page-footer:
       left: |
         &copy; Omar Fitian, 2024<br>

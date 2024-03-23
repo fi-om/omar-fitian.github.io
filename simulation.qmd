@@ -29,13 +29,34 @@ encampments_sf <- st_as_sf(encampments, coords = c("Longitude", "Latitude"), rem
 encampments_sf <- encampments_sf |> st_set_crs(4326)
 
 nyc_sf <- st_read("Data/Borough Boundaries/geo_export_b711edb6-f22b-4799-a1ca-fb9c325f7f7e.shp") |> st_transform(4326)
+
+mn_sf <- st_read("Data/2010 Neighborhood Tabulation Areas (NTAs)/geo_export_e68e4089-10c6-4448-8f19-7c31293a1f7a.shp") |> st_transform(4326) |> 
+  filter(boro_name == "Manhattan")
 ```
 
-The simulation
 
 ```{r}
 ggplot() +
   geom_sf(data = nyc_sf) +
   geom_sf(data = encampments_sf) 
 ```
+
+This map shows the spread of service requests called on homeless encampments in NYC between 2000 until March 22, 2024. While the COVID pandemic had a significant impact on the number of encampments in the city, the data is helpful in understanding relatively high areas of homelessness in the city. It is clear that Manhattan has the highest number of reported encampments, so let's zoom in on it.
+
+
+```{r}
+camps_mn <- encampments_sf |> 
+  filter(Borough == "MANHATTAN")
+
+ggplot() +
+  geom_sf(data = mn_sf) +
+  geom_sf(data = camps_mn)
+```
+
+We can see that some neighborhoods have had many reports of camps and some none at all. If we aggregate the data we will have a better time visually assessing any spatial correlation.
+
+```{r}
+
+```
+
 
