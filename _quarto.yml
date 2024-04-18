@@ -19,7 +19,7 @@ website:
       - href: simulation.qmd
         text: Simulation
       - href: strings_regex.qmd
-        text: Strings and Regular Expressions
+        text: "Strings and Regular Expressions"
   page-footer:
       left: |
         &copy; Omar Fitian, 2024<br>
