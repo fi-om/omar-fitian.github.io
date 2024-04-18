@@ -4,7 +4,6 @@ editor_options:
   chunk_output_type: inline
 execute:
   echo: false
-  include: false
 ---
 
 ```{r, include = FALSE}
@@ -12,6 +11,7 @@ library(tidyverse)
 library(tidytext)
 library(wordcloud)
 library(ggwordcloud)
+library(patchwork)
 ```
 
 ```{r}
@@ -26,13 +26,15 @@ nyt2020 <- nyt2020 |>
   )
 ```
 
-This exercise is an attempt at comparing The New York Times headlines between Palestine and Israel. The graph below shows a great difference in the amount of articles containing the words Israel/Israeli compared to Palestine/Palestinian.
+This exercise compares The New York Times headlines between Palestine and Israel. While they refer to the same land, the names used carry nuances, which is reflected in the differences of coverage.
+
+The graph below shows shows the frequency of mentions in headlines between Israel and Palestine (demonyms included). We can clearly see an enormous gap between coverage. The bar graph also shows that almost half of the mentions of Palestine are related to mentions of Israel, while mentions of both do not constitute a significant portion of Israel's mentions. Israel is more likely to be mentioned when Palestine is mentioned but Palestine is not likely to be mentioned when Israel is mentioned.
 
 ```{r}
 nyt2020 |> 
   count(country) |> 
   ggplot() +
-  geom_bar(aes(x = country, y = n), stat = "identity") +
+  geom_bar(aes(x = fct_reorder(country, -n), y = n), stat = "identity") +
   labs(
     title = "Mentions of Israel/Palestine in NYT headlines in 2020",
     x = "Country",
@@ -40,12 +42,17 @@ nyt2020 |>
   ) 
 ```
 ```{r}
+regexwords2020 <- str_extract_all(nyt2020$headline, "[^ ]+") |>  unlist() |> str_subset("[^0-9]") |> as_tibble() |> rename(word = value) 
+
+regexwords2020
+
 words_nyt2020 <- nyt2020 |> 
   unnest_tokens(output = word, input = headline) |> 
   anti_join(stop_words)
 
 words_nyt2020
 ```
+The proportion of unique words can inform us of the variety in which the headlines speak of the country. This could be owed to a niche focused journalism or a more widespread coverage. However, since there is a stark difference in headlines for each country, it is difficult to be conclusive.
 
 ```{r}
 words_nyt2020 |> 
@@ -57,35 +64,54 @@ words_nyt2020 |>
   ) |> 
   mutate(prop_unique = unique / total,) |> 
   ggplot() +
-  geom_col(aes(x = country, y = prop_unique))
+  geom_col(aes(x = fct_reorder(country, prop_unique), y = prop_unique)) +
+  labs(
+    title = "Proportion of unique words in headlines related to I/P in 2020",
+    x = "Country",
+    y = "Proportion"
+  )
 ```
 
-
+The standard deviation of the word count of articles could be a measure of the scope of journalism. Higher standard deviation could indicated a more diverse set of topics while a lower one could imply a more focused discussion. It can also mean that there is less consistency with the length of the articles.
 ```{r}
-nyt2020 |> 
+sd_graph <- nyt2020 |> 
   group_by(country) |> 
   summarise(
-    sd_word_count = sd(word_count)
+    sd_word_count = sd(word_count),
   ) |> 
   ggplot() +
-  geom_col(aes(x = country, y = sd_word_count))
-```
+  geom_col(aes(x = country, y = sd_word_count)) +
+  labs(
+    title = "Standard deviation of word count of articles mentioning Israel/Palestine in 2020",
+    x = "Country",
+    y = "Standard deviation"
+  ) 
 
+mean_graph <-  nyt2020 |> 
+  group_by(country) |> 
+  summarise(
+    mean_word_count = mean(word_count)
+  ) |> 
+  ggplot() +
+  geom_col(aes(x = country, y = mean_word_count)) +
+  labs(
+    title = "Average word count of articles mentioning Israel/Palestine in 2020",
+    x = "Country",
+    y = "Average word count"
+  )
+
+sd_graph + mean_graph
+```
+This temporal graph allows us to see how sparseley or consistently the country is being covered. We can also better see the ranges of word counts.
 ```{r}
-set.seed(42)
-words_nyt2020 |> 
-  group_by(country, word) |> 
-  count(country, word) |> 
-ggplot(
-  aes(label = word, size = n)
-) +
-  geom_text_wordcloud_area() +
-  scale_size_area(max_size = 30) +
-  theme_minimal() +
-  facet_wrap(~country)
+ words_nyt2020 |> 
+  ggplot() +
+  geom_col(aes(x = pub_date, y = word_count, color = country)) +
+  labs(
+    title = "Time vs. word count in articles mentioning Israel/Palestine in 2020",
+    x = "Country",
+    y = "Word count",
+    color = "Country"
+  ) +
+  scale_color_viridis_d(option = "plasma")
 ```
-
-
-word map
-quanteda
-bigrams and trigram

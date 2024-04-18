@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Omar Fitian -</title>
+<title>Omar Fitian - Strings and Regular Expressions</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,6 +33,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
@@ -81,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="./index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -108,7 +109,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Simulation</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./strings_regex.html" rel="" target="">
+    <a class="nav-link active" href="./strings_regex.html" rel="" target="" aria-current="page">
  <span class="menu-text">Strings and Regular Expressions</span></a>
   </li>  
 </ul>
@@ -123,58 +124,113 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#omar-fitian" id="toc-omar-fitian" class="nav-link active" data-scroll-target="#omar-fitian">Omar Fitian</a>
-  <ul class="collapse">
-  <li><a href="#education" id="toc-education" class="nav-link" data-scroll-target="#education">Education</a></li>
-  </ul></li>
-  <li><a href="#get-in-touch" id="toc-get-in-touch" class="nav-link" data-scroll-target="#get-in-touch">Get in Touch</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-
-
-<div class="quarto-about-trestles">
-  <div class="about-entity">
-    <img src="images/profilepic.jpg" class="about-image
-  round " style="height: 20em; width: 20em;">
-    <div class="about-links">
-  <a href="mailto:fitian1@stolaf.edu" class="about-link" rel="" target="">
-    <i class="bi bi-envelope"></i>
-     <span class="about-link-text"></span>
-  </a>
-  <a href="https://github.com/fi-om" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text"></span>
-  </a>
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Strings and Regular Expressions</h1>
 </div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
   </div>
-  <div class="about-contents"><div id="intro-heading">
-<section id="omar-fitian" class="level2">
-<h2 data-anchor-id="omar-fitian">Omar Fitian</h2>
-<p>Data Analyst, Software Engineer, Sociologist</p>
-<section id="education" class="level3">
-<h3 data-anchor-id="education">Education</h3>
-<p>BA in Computer Science and Sociology/Anthropology with Statistics and Data Science concentration<br>2026 | St.&nbsp;Olaf College</p>
-</section>
-</section>
-</div></div>
+  
+
+</header>
+
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: One or more parsing issues, call `problems()` on your data frame for details,
+e.g.:
+  dat &lt;- vroom(...)
+  problems(dat)</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 55493 Columns: 12
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (8): headline, source, url, print_section, author, type, news_desk, sec...
+dbl  (3): word_count, print_page, year
+dttm (1): pub_date
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+</div>
+<p>This exercise compares The New York Times headlines between Palestine and Israel. While they refer to the same land, the names used carry nuances, which is reflected in the differences of coverage.</p>
+<p>The graph below shows shows the frequency of mentions in headlines between Israel and Palestine (demonyms included). We can clearly see an enormous gap between coverage. The bar graph also shows that almost half of the mentions of Palestine are related to mentions of Israel, while mentions of both do not constitute a significant portion of Israel’s mentions. Israel is more likely to be mentioned when Palestine is mentioned but Palestine is not likely to be mentioned when Israel is mentioned.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="strings_regex_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2,160 × 1
+   word      
+   &lt;chr&gt;     
+ 1 Netanyahu 
+ 2 Seeks     
+ 3 Immunity  
+ 4 From      
+ 5 Israeli   
+ 6 Corruption
+ 7 Charges   
+ 8 Israeli   
+ 9 Supreme   
+10 Court     
+# ℹ 2,150 more rows</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Joining with `by = join_by(word)`</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,484 × 13
+   source             word_count url       print_section print_page author type 
+   &lt;chr&gt;                   &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;              &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;
+ 1 The New York Times       1310 https://… A                      7 By Is… arti…
+ 2 The New York Times       1310 https://… A                      7 By Is… arti…
+ 3 The New York Times       1310 https://… A                      7 By Is… arti…
+ 4 The New York Times       1310 https://… A                      7 By Is… arti…
+ 5 The New York Times       1310 https://… A                      7 By Is… arti…
+ 6 The New York Times       1310 https://… A                      7 By Is… arti…
+ 7 The New York Times        772 https://… A                     11 By Is… arti…
+ 8 The New York Times        772 https://… A                     11 By Is… arti…
+ 9 The New York Times        772 https://… A                     11 By Is… arti…
+10 The New York Times        772 https://… A                     11 By Is… arti…
+# ℹ 1,474 more rows
+# ℹ 6 more variables: pub_date &lt;dttm&gt;, news_desk &lt;chr&gt;, section &lt;chr&gt;,
+#   year &lt;dbl&gt;, country &lt;chr&gt;, word &lt;chr&gt;</code></pre>
+</div>
+</div>
+<p>The proportion of unique words can inform us of the variety in which the headlines speak of the country. This could be owed to a niche focused journalism or a more widespread coverage. However, since there is a stark difference in headlines for each country, it is difficult to be conclusive.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="strings_regex_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>The standard deviation of the word count of articles could be a measure of the scope of journalism. Higher standard deviation could indicated a more diverse set of topics while a lower one could imply a more focused discussion. It can also mean that there is less consistency with the length of the articles.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="strings_regex_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>This temporal graph allows us to see how sparseley or consistently the country is being covered. We can also better see the ranges of word counts.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="strings_regex_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+</div>
 </div>
 
-<section id="get-in-touch" class="level2">
-<h2 data-anchor-id="get-in-touch">Get in Touch</h2>
-<p><strong>Email</strong>: <a href="mailto:fitian1@stolaf.edu">fitian1 at stolaf.edu</a></p>
-<p><strong>Address</strong>: 1500 St.&nbsp;Olaf Ave, Northfield, MN 55057</p>
 
-
-
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -197,6 +253,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     
