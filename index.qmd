@@ -1,31 +1,11 @@
 ---
-title: ""
-editor_options: 
-  chunk_output_type: console
-about:
-  id: intro-heading
-  template: trestles
-  image: images/profilepic.jpg
-  image-shape: round
-  links:
-    - icon: envelope
-      href: mailto:fitian1@stolaf.edu
-    - icon: github
-      href: https://github.com/fi-om
+title: "Website"
 ---
 
-::: {#intro-heading}
-## Omar Fitian
+This is a Quarto website.
 
-Data Analyst, Software Engineer, Sociologist
+To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
 
-### Education
-
-BA in Computer Science and Sociology/Anthropology with Statistics and Data Science concentration<br>2026 \| St. Olaf College
-:::
-
-## Get in Touch
-
-**Email**: <a href='mailto:fitian1@stolaf.edu'>fitian1 at stolaf.edu</a>
-
-**Address**: 1500 St. Olaf Ave, Northfield, MN 55057
+```{r}
+1 + 1
+```

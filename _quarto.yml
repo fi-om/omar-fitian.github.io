@@ -8,30 +8,11 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: about.qmd
-        text: About
-      - text: "Maps"
-        menu:
-          - text: "US States"
-            href: us_states.qmd
-          - text: "Wisconsin Districts"
-            href: wisconsin_districts.qmd
-      - href: simulation.qmd
-        text: Simulation
-      - href: strings_regex.qmd
-        text: "Strings and Regular Expressions"
-  page-footer:
-      left: |
-        &copy; Omar Fitian, 2024<br>
-        All content licensed under <i class='bi-badge-cc'></i>
-        [(CC BY-NC-SA 4.0)](http://creativecommons.org/licenses/by-nc-sa/4.0/)
-      right: |
-        Site built with <a href='https://quarto.org/'>Quarto</a>
-
+      - about.qmd
 
 format:
   html:
-    theme: lux
+    theme: cosmo
     css: styles.css
     toc: true
 
