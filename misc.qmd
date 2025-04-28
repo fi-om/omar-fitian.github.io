@@ -1,0 +1,32 @@
+---
+title: "Other Work"
+format: html
+---
+
+Welcome! Here you can view or download a selection of writing samples from essays and research papers, and other projects.
+
+------------------------------------------------------------------------
+
+# Download Samples
+
+-   [Academic Advising and Vocational Discernment (PDF)](files/advising_excerpts.pdf)
+
+-   [Museums in Minnesota](https://fitian-omar.shinyapps.io/museum_project)
+
+------------------------------------------------------------------------
+
+# View Samples
+
+## Academic Advising and Vocational Discernment
+
+<iframe src="files/advising_excerpts.pdf" width="100%" height="800px">
+
+</iframe>
+
+## Museums
+
+<iframe src="https://fitian-omar.shinyapps.io/museum_project" width="100%" height="800px">
+
+</iframe>
+
+------------------------------------------------------------------------

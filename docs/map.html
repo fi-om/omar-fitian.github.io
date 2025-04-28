@@ -101,7 +101,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Map</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./misc.qmd"> 
+    <a class="nav-link" href="./misc.html"> 
 <span class="menu-text">Other work</span></a>
   </li>  
 </ul>
@@ -138,12 +138,20 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>To create this map, I used Minnesota’s Exempt Organizations Business Master File (EO BMF) from the IRS. Using the addresses in the dataset, I retrieved their coordinates to map them. Processing thousands of nonprofits is compuationallyexpensive, hence a sample of 100 was chosen.</p>
+<p>To create this map, I used Minnesota’s Exempt Organizations Business Master File (EO BMF) from the IRS. Using the addresses in the dataset, I retrieved their coordinates to map them. Geocoding thousands of addresses is computationally expensive, hence a sample of 100 nonprofits was selected for demonstration purposes.</p>
 <iframe src="https://fitian-omar.shinyapps.io/mcn-map/" width="100%" height="800px" frameborder="1">
 </iframe>
-<p>https://fitian-omar.shinyapps.io/mcn-map/</p>
+<section id="next-steps" class="level1">
+<h1>Next Steps</h1>
+<ul>
+<li><p>Add more details to the popups, like hours of operation and contact details.</p></li>
+<li><p>Graph the predicted risk of nonprofit closure.</p></li>
+<li><p>Enable users to filter nonprofits by type of services offered.</p></li>
+<li><p>Add county/city level mapping.</p></li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

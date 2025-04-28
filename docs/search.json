@@ -1,24 +1,24 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "misc.html",
+    "href": "misc.html",
+    "title": "Other Work",
     "section": "",
-    "text": "MCN, I would really like to work with you."
+    "text": "Welcome! Here you can view or download a selection of writing samples from essays and research papers, and other projects."
   },
   {
-    "objectID": "mner.html",
-    "href": "mner.html",
-    "title": "Minnesota Nonprofit Economic Snapshot: A Mini-Analysis",
-    "section": "",
-    "text": "This sample was prepared as a work sample for MCN.\n\nExecutive Summary\n\nThe nonprofit sector remains a significant contributor to Minnesota’s economy, employing approximately 13% of the state’s workforce.\nNonprofit employment has shown steady growth over the past three decades, increasing by over 120% compared to a 30% growth in the total state workforce.\nThe nonprofit workforce is predominantly female (74% of employees).\nWages in the nonprofit sector, though traditionally lower, have shown resilience and are increasingly competitive with government wages.\nRegional distribution of nonprofit employers mirrors population trends, with the Twin Cities Metro being the central hub.\n\n\n\nIntroduction\nThis analysis uses nonprofit-adjacent industries (Education, Healthcare, Arts, and Other Services) as a proxy for the nonprofit sector, based on publicly available QCEW data from 2023. In some sections, to demonstrate statistical inference methods, I simulated individual-level wage data around the reported sector averages.\n\n\nExploratory Data Analysis\nAlthough statistical inference is not possible due to the aggregated nature of the data, visual inspection suggests that average annual wages and employment differ meaningfully across nonprofit-adjacent sectors.\n\n\n\n\n\n\n\n\nFigure 1: The healthcare industry has the highest number of employees, and the Arts industry employs the least.\n\n\n\n\n\n\n\n             Df    Sum Sq   Mean Sq F value Pr(&gt;F)    \nsector        3 4.018e+10 1.339e+10   302.3 &lt;2e-16 ***\nResiduals   396 1.754e+10 4.430e+07                   \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\n  Tukey multiple comparisons of means\n    95% family-wise confidence level\n\nFit: aov(formula = wage ~ sector, data = simulated_data)\n\n$sector\n                                 diff        lwr        upr   p adj\nEducation-Arts              10524.382   8095.798  12952.966 0.0e+00\nHealth Care-Arts            27000.457  24571.873  29429.041 0.0e+00\nOther Services-Arts          6041.760   3613.176   8470.344 0.0e+00\nHealth Care-Education       16476.075  14047.491  18904.659 0.0e+00\nOther Services-Education    -4482.621  -6911.205  -2054.037 1.6e-05\nOther Services-Health Care -20958.696 -23387.280 -18530.112 0.0e+00\n\n\n\n\n\n\n\n\n\n\nFigure 2: The healthcare industry has the highest annual wage, with the other industries having similar wages."
+    "objectID": "misc.html#academic-advising-and-vocational-discernment",
+    "href": "misc.html#academic-advising-and-vocational-discernment",
+    "title": "Other Work",
+    "section": "Academic Advising and Vocational Discernment",
+    "text": "Academic Advising and Vocational Discernment"
   },
   {
-    "objectID": "map.html",
-    "href": "map.html",
-    "title": "Map",
-    "section": "",
-    "text": "To create this map, I used Minnesota’s Exempt Organizations Business Master File (EO BMF) from the IRS. Using the addresses in the dataset, I retrieved their coordinates to map them. Processing thousands of nonprofits is compuationallyexpensive, hence a sample of 100 was chosen.\n\n\nhttps://fitian-omar.shinyapps.io/mcn-map/"
+    "objectID": "misc.html#museums",
+    "href": "misc.html#museums",
+    "title": "Other Work",
+    "section": "Museums",
+    "text": "Museums"
   },
   {
     "objectID": "index.html",
@@ -40,5 +40,26 @@
     "title": "Omar Fitian",
     "section": "Get in Touch",
     "text": "Get in Touch\nEmail: fitian1 at stolaf.edu\nAddress: 1500 St. Olaf Ave, Northfield, MN 55057"
+  },
+  {
+    "objectID": "map.html",
+    "href": "map.html",
+    "title": "Map",
+    "section": "",
+    "text": "To create this map, I used Minnesota’s Exempt Organizations Business Master File (EO BMF) from the IRS. Using the addresses in the dataset, I retrieved their coordinates to map them. Geocoding thousands of addresses is computationally expensive, hence a sample of 100 nonprofits was selected for demonstration purposes.\n\n\n\nNext Steps\n\nAdd more details to the popups, like hours of operation and contact details.\nGraph the predicted risk of nonprofit closure.\nEnable users to filter nonprofits by type of services offered.\nAdd county/city level mapping."
+  },
+  {
+    "objectID": "mner.html",
+    "href": "mner.html",
+    "title": "Minnesota Nonprofit Economic Snapshot: A Mini-Analysis",
+    "section": "",
+    "text": "This analysis uses nonprofit-adjacent industries (Education, Healthcare, Arts, and Other Services) as a proxy for the nonprofit sector, based on publicly available QCEW data from 2023.\n\nExploratory Data Analysis\nWhile statistical inference is not possible due to the aggregated nature of the data, visual inspection suggests that average annual wages and employment differ meaningfully across nonprofit-adjacent sectors.\n\n\n\n\n\n\n\n\nFigure 1: The healthcare industry has the highest number of employees, and the Arts industry employs the least.\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: The healthcare industry has the highest annual wage, with the other industries having similar wages.\n\n\n\n\n\n\n\nAnalysis Plan\n\nConduct descriptive and inferential statistical analysis of sectoral differences in employment and wages. This will be possible with access to the specialized data from DEED.\nDevelop machine learning models to predict nonprofit financial stability and risk of closure.\nPerform spatial analysis to identify clustering, dispersion, or geographic risk patterns.\nCompare findings to existing research on nonprofit sector trends and states with similar demographic and economic profiles."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "MCN, I would really like to work with you."
   }
 ]

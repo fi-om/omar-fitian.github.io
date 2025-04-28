@@ -1,5 +1,6 @@
 ---
 title: "Minnesota Nonprofit Economic Snapshot: A Mini-Analysis"
+subtitle: "Prepared as a work sample for MCN"
 editor_options: 
   chunk_output_type: console
 execute:
@@ -11,19 +12,8 @@ toc: false
 library(tidyverse)
 ```
 
-**This sample was prepared as a work sample for MCN.**
 
-# Executive Summary
-
--   The nonprofit sector remains a significant contributor to Minnesota's economy, employing approximately 13% of the state's workforce.
--   Nonprofit employment has shown steady growth over the past three decades, increasing by over 120% compared to a 30% growth in the total state workforce.
--   The nonprofit workforce is predominantly female (74% of employees).
--   Wages in the nonprofit sector, though traditionally lower, have shown resilience and are increasingly competitive with government wages.
--   Regional distribution of nonprofit employers mirrors population trends, with the Twin Cities Metro being the central hub.
-
-# Introduction
-
-This analysis uses nonprofit-adjacent industries (Education, Healthcare, Arts, and Other Services) as a proxy for the nonprofit sector, based on publicly available QCEW data from 2023. In some sections, to demonstrate statistical inference methods, I simulated individual-level wage data around the reported sector averages.
+This analysis uses nonprofit-adjacent industries (Education, Healthcare, Arts, and Other Services) as a proxy for the nonprofit sector, based on publicly available QCEW data from 2023.
 
 ```{r}
 qcewGetAreaData <- function(year, qtr, area) {
@@ -49,7 +39,7 @@ mn_nonprofit_like <- mn_data_2023 %>%
 
 # Exploratory Data Analysis
 
-Although statistical inference is not possible due to the aggregated nature of the data, visual inspection suggests that average annual wages and employment differ meaningfully across nonprofit-adjacent sectors.
+While statistical inference is not possible due to the aggregated nature of the data, visual inspection suggests that average annual wages and employment differ meaningfully across nonprofit-adjacent sectors.
 
 ```{r}
 #| label: fig-bar-employment
@@ -62,28 +52,6 @@ ggplot(mn_nonprofit_like, aes(x = industry_title, y = annual_avg_emplvl)) +
 ```
 
 ```{r}
-set.seed(123)
-
-health_wages <- rnorm(100, mean = 65000, sd = 8000)
-education_wages <- rnorm(100, mean = 50000, sd = 7000)
-arts_wages <- rnorm(100, mean = 38000, sd = 6000)
-other_services_wages <- rnorm(100, mean = 45000, sd = 6500)
-
-simulated_data <- data.frame(
-  wage = c(health_wages, education_wages, arts_wages, other_services_wages),
-  sector = factor(rep(c("Health Care", "Education", "Arts", "Other Services"), each = 100))
-)
-
-anova_sim <- aov(wage ~ sector, data = simulated_data)
-summary(anova_sim)
-
-TukeyHSD(anova_sim)
-```
-
-
-
-
-```{r}
 #| label: fig-bar-wages
 #| fig-cap: "The healthcare industry has the highest annual wage, with the other industries having similar wages."
 
@@ -92,3 +60,13 @@ ggplot(mn_nonprofit_like, aes(x = industry_title, y = annual_avg_wkly_wage * 52)
   labs(title = "Estimated Annual Wages by Industry (2023)", x = "Industry", y = "Annual Wages (USD)",
        caption = "Source: DEED 2023") 
 ```
+
+# Analysis Plan
+
+- Conduct descriptive and inferential statistical analysis of sectoral differences in employment and wages. This will be possible with access to the specialized data from DEED.
+
+- Develop machine learning models to predict nonprofit financial stability and risk of closure.
+
+- Perform spatial analysis to identify clustering, dispersion, or geographic risk patterns.
+
+- Compare findings to existing research on nonprofit sector trends and states with similar demographic and economic profiles.

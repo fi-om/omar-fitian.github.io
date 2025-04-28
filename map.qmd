@@ -42,15 +42,19 @@ mn_sf <- mn_sf %>%
   ))
 ```
 
+To create this map, I used Minnesota's Exempt Organizations Business Master File (EO BMF) from the IRS. Using the addresses in the dataset, I retrieved their coordinates to map them. Geocoding thousands of addresses is computationally expensive, hence a sample of 100 nonprofits was selected for demonstration purposes.
 
-To create this map, I used Minnesota's Exempt Organizations Business Master File (EO BMF) from the IRS. Using the addresses in the dataset, I retrieved their coordinates to map them. Processing thousands of nonprofits is compuationallyexpensive, hence a sample of 100 was chosen.
+<iframe src="https://fitian-omar.shinyapps.io/mcn-map/" width="100%" height="800px" frameborder="1">
 
-<iframe src="https://fitian-omar.shinyapps.io/mcn-map/"
-        width="100%"
-        height="800px"
-        frameborder="1">
 </iframe>
 
+# Next Steps
 
+- Add more details to the popups, like hours of operation and contact details.
 
-https://fitian-omar.shinyapps.io/mcn-map/
+- Graph the predicted risk of nonprofit closure.
+
+- Enable users to filter nonprofits by type of services offered.
+
+- Add county/city level mapping.
+

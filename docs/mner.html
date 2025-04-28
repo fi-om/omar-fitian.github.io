@@ -101,7 +101,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Map</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./misc.qmd"> 
+    <a class="nav-link" href="./misc.html"> 
 <span class="menu-text">Other work</span></a>
   </li>  
 </ul>
@@ -122,6 +122,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Minnesota Nonprofit Economic Snapshot: A Mini-Analysis</h1>
+<p class="subtitle lead">Prepared as a work sample for MCN</p>
 </div>
 
 
@@ -138,24 +139,10 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><strong>This sample was prepared as a work sample for MCN.</strong></p>
-<section id="executive-summary" class="level1">
-<h1>Executive Summary</h1>
-<ul>
-<li>The nonprofit sector remains a significant contributor to Minnesota’s economy, employing approximately 13% of the state’s workforce.</li>
-<li>Nonprofit employment has shown steady growth over the past three decades, increasing by over 120% compared to a 30% growth in the total state workforce.</li>
-<li>The nonprofit workforce is predominantly female (74% of employees).</li>
-<li>Wages in the nonprofit sector, though traditionally lower, have shown resilience and are increasingly competitive with government wages.</li>
-<li>Regional distribution of nonprofit employers mirrors population trends, with the Twin Cities Metro being the central hub.</li>
-</ul>
-</section>
-<section id="introduction" class="level1">
-<h1>Introduction</h1>
-<p>This analysis uses nonprofit-adjacent industries (Education, Healthcare, Arts, and Other Services) as a proxy for the nonprofit sector, based on publicly available QCEW data from 2023. In some sections, to demonstrate statistical inference methods, I simulated individual-level wage data around the reported sector averages.</p>
-</section>
+<p>This analysis uses nonprofit-adjacent industries (Education, Healthcare, Arts, and Other Services) as a proxy for the nonprofit sector, based on publicly available QCEW data from 2023.</p>
 <section id="exploratory-data-analysis" class="level1">
 <h1>Exploratory Data Analysis</h1>
-<p>Although statistical inference is not possible due to the aggregated nature of the data, visual inspection suggests that average annual wages and employment differ meaningfully across nonprofit-adjacent sectors.</p>
+<p>While statistical inference is not possible due to the aggregated nature of the data, visual inspection suggests that average annual wages and employment differ meaningfully across nonprofit-adjacent sectors.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-bar-employment" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -168,30 +155,6 @@ Figure&nbsp;1: The healthcare industry has the highest number of employees, and 
 </figcaption>
 </figure>
 </div>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>             Df    Sum Sq   Mean Sq F value Pr(&gt;F)    
-sector        3 4.018e+10 1.339e+10   302.3 &lt;2e-16 ***
-Residuals   396 1.754e+10 4.430e+07                   
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  Tukey multiple comparisons of means
-    95% family-wise confidence level
-
-Fit: aov(formula = wage ~ sector, data = simulated_data)
-
-$sector
-                                 diff        lwr        upr   p adj
-Education-Arts              10524.382   8095.798  12952.966 0.0e+00
-Health Care-Arts            27000.457  24571.873  29429.041 0.0e+00
-Other Services-Arts          6041.760   3613.176   8470.344 0.0e+00
-Health Care-Education       16476.075  14047.491  18904.659 0.0e+00
-Other Services-Education    -4482.621  -6911.205  -2054.037 1.6e-05
-Other Services-Health Care -20958.696 -23387.280 -18530.112 0.0e+00</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -208,6 +171,15 @@ Figure&nbsp;2: The healthcare industry has the highest annual wage, with the oth
 </div>
 </div>
 </div>
+</section>
+<section id="analysis-plan" class="level1">
+<h1>Analysis Plan</h1>
+<ul>
+<li><p>Conduct descriptive and inferential statistical analysis of sectoral differences in employment and wages. This will be possible with access to the specialized data from DEED.</p></li>
+<li><p>Develop machine learning models to predict nonprofit financial stability and risk of closure.</p></li>
+<li><p>Perform spatial analysis to identify clustering, dispersion, or geographic risk patterns.</p></li>
+<li><p>Compare findings to existing research on nonprofit sector trends and states with similar demographic and economic profiles.</p></li>
+</ul>
 
 
 </section>
