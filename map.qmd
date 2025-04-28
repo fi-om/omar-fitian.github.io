@@ -1,0 +1,56 @@
+---
+title: "Map"
+format:
+  html:
+    page-layout: full
+editor_options: 
+  chunk_output_type: console
+execute:
+  echo: false
+toc: false
+---
+
+```{r, warning=FALSE, include = "FALSE"}
+library(tidyverse)
+library(janitor)
+library(leaflet)
+library(scales)
+irs_data <- read_csv("Data/eo_mn.csv") |> clean_names()
+
+# mn_nonprofits = irs_data |> 
+#   filter(subsection == "03", status == "01")
+# 
+# library(tidygeocoder)
+# 
+# mn_nonprofits <- mn_nonprofits |> 
+#   mutate(full_address = paste(street, city, state, zip, sep = ", "))
+
+# mn_sf <- mn_nonprofits |> 
+#   sample_n(100) |>
+#   geocode(address = full_address, method = 'osm', lat = latitude , long = longitude)
+
+# mn_sf |> write_csv("Data/mn_sf.csv")
+
+mn_sf = read_csv("Data/mn_sf.csv")
+
+mn_sf <- mn_sf %>%
+  mutate(popup_info = paste0(
+    "<strong>", name, "</strong><br>",
+    street, "<br>",
+    city, ", ", state, " ", zip, "<br>",
+    "Revenue: $", comma(revenue_amt)
+  ))
+```
+
+
+To create this map, I used Minnesota's Exempt Organizations Business Master File (EO BMF) from the IRS. Using the addresses in the dataset, I retrieved their coordinates to map them. Processing thousands of nonprofits is compuationallyexpensive, hence a sample of 100 was chosen.
+
+<iframe src="https://fitian-omar.shinyapps.io/mcn-map/"
+        width="100%"
+        height="800px"
+        frameborder="1">
+</iframe>
+
+
+
+https://fitian-omar.shinyapps.io/mcn-map/
